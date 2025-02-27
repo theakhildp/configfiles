@@ -1,0 +1,73 @@
+# Rename the file to .tmux.conf and place it in homw directory not as root
+
+#Remap prefix to screens
+set -g prefix C-a
+bind C-a send-prefix
+unbind C-b
+
+#Quality of life stuff
+set -g history-limit 10000
+set -g allow-rename off
+
+#Join Windows
+bind-key j command-prompt -p "join pane from:" "join-pane -s '%%'"
+bind-key s command-prompt -p "send pane to:" "join-pane -t '%%'"
+
+#Mouse nd keyborad
+set -g mouse on
+set -g mode-keys vi
+#setw -g mode-keys vi
+
+#Copy and paste to system keyboard
+set -g @plugin 'tmux-plugins/tmux-yank'
+
+#Search mode VI(by deafult seacrh is emac we chage it to VI)
+set-window-option -g mode-keys vi
+
+#Tmux menus
+set -g @plugin 'jaclu/tmux-menus'
+
+#pluggin for logging in 
+#new-shell /opt/tmuxlogs/logs.tmux
+set -g @plugin 'tmux-plugins/tmux-logging'
+set -g @logging-path '/home/kali/logs'
+
+#vim
+#set -g @plugin 'aserowy/tmux.nvim'
+
+#prefix key Highlight
+set -g @plugin 'tmux-plugins/tmux-prefix-highlight'
+
+
+# List of plugins
+set -g @plugin 'tmux-plugins/tpm'
+set -g @plugin 'dracula/tmux'
+ 
+
+set -g @dracula-show-powerline true
+#set -g @dracula-fixed-location "NYC"
+set -g @dracula-plugins "cpu-usage ram-usage"
+set -g @dracula-show-flags true
+set -g @dracula-show-left-icon session
+#set -g status-position top
+
+#Resurrect and continue to save tmux enviroment
+set -g @plugin 'tmux-plugins/tmux-resurrect'
+set -g @plugin 'tmux-plugins/tmux-continuum'
+
+#clutter removal
+set -g @plugin 'tmux-plugins/tmux-sensible'
+
+#Tmux Open 
+set -g @plugin 'tmux-plugins/tmux-open'
+#To change default search engine for tmux-open plugin
+# set -g @open-S 'https://www.duckduckgo.com/?q='
+
+#treemux
+set -g @treemux-tree-nvim-init-file '~/.tmux/plugins/treemux/configs/treemux_init.lua'
+set -g @plugin 'kiyoon/treemux'
+
+
+# Initialize TMUX plugin manager (keep this line at the very bottom of tmux.conf)
+run '~/.tmux/plugins/tpm/tpm'
+
