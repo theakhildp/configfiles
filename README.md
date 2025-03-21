@@ -1,5 +1,6 @@
-## The configuration used in these is based on plugins, packages, 
+## The configuration used in this repo is based on plugins, packages, 
 ## These files only contain minimal configuration for beginner
+## use the file with caution. create a backup copy of all the config files and dot files before using the files in this repo
 
 ## How to save/use tmux, zshrc files
 - save the kali_zshrc_config as ~/.zshrc
