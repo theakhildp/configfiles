@@ -122,15 +122,26 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
+# Alias for recon-spider 
 alias spider="python3 /home/kali/tool/ReconSpider.py"
-alias tryhackme="openvpn --config /home/kali/vpn_files/akhildp.ovpn --daemon"
-alias dlabs="openvpn --config /home/kali/vpn_files/Dedicated_Lab.ovpn --daemon"
+
+### Aliases for vpn files. Run open vpn in background and end the process using "killall openvpn" uncomment the line before use
+#alias tryhackme="openvpn --config /home/kali/vpn_files/akhildp.ovpn --daemon"
+#alias dlabs="openvpn --config /home/kali/vpn_files/Dedicated_Lab.ovpn --daemon"
+
+###OR#######
+
+### aliases for vpn files. Uncomment these if you want to dedicate a terminal pane for vpn
 #alias dlabs="openvpn /home/kali/vpn_files/Dedicated_Lab.ovpn"
-alias alabs="openvpn /home/kali/vpn_files/Academy_Lab.ovpn"
+#alias alabs="openvpn /home/kali/vpn_files/Academy_Lab.ovpn"
+
+# other aliases
 alias p10k= "p10k configure"
 alias finalrecon="python3 /home/kali/tool/FinalRecon/finalrecon.py"
 alias crtsh="python3 /home/kali/Desktop/scripts/crt_sh.py"
 alias chaospy="python /usr/bin/chaospy.py"
+
+# alias for magescan - Tool for magento
 alias magescan="php /home/kali/tool/magescan/magescan.phar"
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
@@ -141,5 +152,5 @@ export PATH="/root/.cargo/bin:$PATH"
 
 [[ -s "/root/.gvm/scripts/gvm" ]] && source "/root/.gvm/scripts/gvm"
 
-# Created by `pipx` on 2025-02-21 20:58:53
+
 export PATH="$PATH:/root/.local/bin"
